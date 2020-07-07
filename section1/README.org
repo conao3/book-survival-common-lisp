@@ -1,0 +1,61 @@
+* Section1
+** Install roswell
+#+begin_src shell
+  pacman -S roswell-git
+  ros install sbcl-bin
+#+end_src
+** Show sbcl version
+#+begin_src shell
+  $ ros list installed
+  Installed implementations:
+
+  Installed versions of sbcl-bin:
+  sbcl-bin/2.0.6
+#+end_src
+** Exec roswell script
+#+begin_src shell
+$ ros fact.ros 10
+Factorial 10 = 3628800
+#+end_src
+** Build roswell script
+#+begin_src shell
+$ ros build fact.ros
+$ ./fact 10
+Factorial 10 = 3628800
+
+$ time ros fact.ros 10
+Factorial 10 = 3628800
+
+real	0m0.434s
+user	0m0.364s
+sys	0m0.064s
+
+$ time ./fact 10
+Factorial 10 = 3628800
+
+real	0m0.132s
+user	0m0.119s
+sys	0m0.014s
+#+end_src
+
+4.5x faster.
+#+begin_src elisp
+  (/ 0.064 0.014)    ;=> 4.571
+#+end_src
+** Install library
+#+begin_src shell
+  ros install rove                # from Quicklisp
+  ros install fukamachi/rove      # from GitHub HEAD
+
+  $ ros run                       # run interpreter
+  ,* (ql:quickload :rove)          # load rove library
+#+end_src
+** Update library
+#+begin_src shell
+  ros update rove
+#+end_src
+** Exec binary
+Exec binary is located at =$(HOME)/.loswell/bin= via =ros install=
+#+begin_src shell
+  export PATH=$HOME/.roswell/bin:$PATH
+#+end_src

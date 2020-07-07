@@ -1,0 +1,22 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp(ql:quickload '() :silent t)
+  )
+
+(defpackage :ros.script.fact.3803080798
+  (:use :cl))
+(in-package :ros.script.fact.3803080798)
+
+(defun fact (n)
+  (if (zerop n)
+      1
+    (* n (fact (1- n)))))
+
+(defun main (n &rest argv)
+  (declare (ignore argv))
+  (format t "~&Factorial ~D = ~D~%" n (fact (parse-integer n))))
