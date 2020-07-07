@@ -1,0 +1,34 @@
+* section4
+=rove= is modern CL test framework, successor of Prove.
+** Install rove
+#+begin_src shell
+  (ql:quickload :rove)
+#+end_src
+
+#+begin_src shell
+  ,* (asdf:component-version (asdf:find-system :rove))
+  "0.9.6"
+#+end_src
+** use-package
+#+begin_src shell
+  (use-package :rove)
+#+end_src
+** Add test
+Add below snippet to =yubin/tests/main.lisp=.
+#+begin_src lisp
+  (deftest get-place
+    (testing "should return the address for a given postal code in a number"
+             (ok (equal (yubin:get-place 6380321) "奈良県吉野郡天川村坪内") "6380321 -> 奈良県吉野郡天川村坪内")
+             (ok (equal (yubin:get-place 1500000) "東京都渋谷区") "1500000 -> 東京都渋⾕区"))
+    (testing "should return the address for a given postal code in a string"
+             (ok (equal (yubin:get-place "6380321") "奈良県吉野郡天川村坪内") "\"6380321\" -> 奈良県吉野郡天川村坪内")
+             (ok (equal (yubin:get-place "150-0000") "東京都渋⾕区") "\"150-0000\" -> 東京都渋⾕区"))
+    (testing "should raise an error for an unknown postal code"
+             (ok (signals (yubin:get-place 6068501))))
+    (testing "should raise an error for non postal code"
+             (ok (signals (yubin:get-place "clfreaks")))))
+#+end_src
+** Run test
+#+begin_src shell
+  rove yubin.asd
+#+end_src
