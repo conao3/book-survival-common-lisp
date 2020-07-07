@@ -1,0 +1,30 @@
+* section5
+** Clack base web app
+*** Install Clack
+#+begin_src shell
+  ros install clack
+#+end_src
+*** Run local server
+#+begin_src shell
+  $ clackup app.lisp
+  Hunchentoot server is going to start.
+  Listening on 127.0.0.1:5000.
+#+end_src
+** Qlot
+*** Install qlot
+#+begin_src shell
+  ros install qlot
+#+end_src
+*** Setup qlot
+#+begin_src shell
+  touch qlfile
+  qlot install
+#+end_src
+*** Use qlot environment
+#+begin_src shell
+  qlot exec ros run
+#+end_src
+
+#+begin_src shell
+  qlot exec ros install clack
+#+end_src

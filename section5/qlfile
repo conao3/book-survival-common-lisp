@@ -1,0 +1,3 @@
+ql :all 2018-02-28   # Quicklisp の 2018-02-28 の dist を利⽤する
+ql clack :latest     # Clack のみ最新の登録バージョンを利⽤する
+git lsx https://github.com/fukamachi/lsx # LSX は git リポジトリからダウンロードする

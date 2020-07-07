@@ -1,0 +1,12 @@
+("quicklisp" .
+ (:class qlot/source/dist:source-dist
+  :initargs (:distribution "http://beta.quicklisp.org/dist/quicklisp.txt" :%version "2018-02-28")
+  :version "2018-02-28"))
+("clack" .
+ (:class qlot/source/ql:source-ql
+  :initargs (:%version :latest)
+  :version "ql-2020-06-10"))
+("lsx" .
+ (:class qlot/source/git:source-git
+  :initargs (:remote-url "https://github.com/fukamachi/lsx")
+  :version "git-8eea08b678f57f5b72ce76de7effb4f279d2510f"))
