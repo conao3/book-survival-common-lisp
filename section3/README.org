@@ -1,0 +1,42 @@
+* section3
+Create project
+** Install cl-project
+#+begin_src shell
+  $ ros install fukamachi/cl-project
+  $ which make-project
+  /home/conao/.roswell/bin/make-project
+#+end_src
+** Create prject
+#+begin_src shell
+  make-project yubin --depends-on dexador jonathan
+#+end_src
+** Link project
+#+begin_src shell
+  cd ~/.roswell/local-projects/
+  ln -s ~/dev/repos/book-survival-common-lisp/section3/yubin
+#+end_src
+** Create ros script
+#+begin_src shell
+  mkdir yubin/roswell
+  cd yubin/roswell
+  ros init yubin.ros
+#+end_src
+
+#+begin_src shell
+  $ tree yubin
+  ~/.roswell/local-projects/yubin
+  ├── README.markdown
+  ├── README.org
+  ├── roswell
+  │   └── yubin.ros
+  ├── src
+  │   └── main.lisp
+  ├── tests
+  │   └── main.lisp
+  └── yubin.asd
+#+end_src
+** Run ros script
+#+begin_src shell
+  $ ros yubin.ros 7390036
+  広島県東広島市西条町田口
+#+end_src
