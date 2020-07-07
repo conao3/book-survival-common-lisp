@@ -1,0 +1,13 @@
+* section2
+** Install Lem
+#+begin_src shell
+  ros install cxxxr/lem
+#+end_src
+** Run Lem
+#+begin_src shell
+  lem [file]
+#+end_src
+** Lem manual
+- Use slime in Lem :: =M-x slime=
+- Switch repl window :: =C-c z=
+- quit :: =C-g=
