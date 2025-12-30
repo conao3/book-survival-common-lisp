@@ -1,46 +1,64 @@
+#+title: Survival Common Lisp - Code Examples
 #+author: conao3
-#+date: <2020-03-20 Fri>
 
 [[https://github.com/conao3/book-survival-common-lisp][https://raw.githubusercontent.com/conao3/files/master/blob/headers/png/book-survival-common-lisp.png]]
+
 [[https://github.com/conao3/book-survival-common-lisp/blob/master/LICENSE][https://img.shields.io/github/license/conao3/book-survival-common-lisp.svg?style=flat-square]]
 [[https://github.com/conao3/book-survival-common-lisp/releases][https://img.shields.io/github/tag/conao3/book-survival-common-lisp.svg?style=flat-square]]
-[[https://github.com/conao3/book-survival-common-lisp/actions][https://img.shields.io/badge/patreon-become%20a%20patron-orange.svg?logo=patreon&style=flat-square]]
-[[https://twitter.com/conao_3][https://img.shields.io/badge/twitter-@conao__3-blue.svg?logo=twitter&style=flat-square]]
-[[https://conao3-support.slack.com/join/shared_invite/enQtNjUzMDMxODcyMjE1LWUwMjhiNTU3Yjk3ODIwNzAxMTgwOTkxNmJiN2M4OTZkMWY0NjI4ZTg4MTVlNzcwNDY2ZjVjYmRiZmJjZDU4MDE][https://img.shields.io/badge/chat-on_slack-blue.svg?logo=slack&style=flat-square]]
 
-* Table of Contents
-- [[#description][Description]]
-- [[#install][Install]]
-- [[#usage][Usage]]
-- [[#information][Information]]
-  - [[#community][Community]]
-  - [[#contribution][Contribution]]
-  - [[#license][License]]
-  - [[#author][Author]]
+* About
 
-* Description
-Practical code snippet repository for reading Survival Common Lisp.
+This repository contains practical code examples and snippets for the book "Survival Common Lisp". Each section corresponds to a chapter in the book, providing hands-on exercises and working implementations you can run locally.
 
-* Install
+* Prerequisites
 
-* Usage
+- [[https://github.com/roswell/roswell][Roswell]] - A Common Lisp implementation manager and launcher
 
-* Information
-** Community
-All feedback and suggestions are welcome!
+* Project Structure
 
-You can use github issues, but you can also use [[https://conao3-support.slack.com/join/shared_invite/enQtNjUzMDMxODcyMjE1LWUwMjhiNTU3Yjk3ODIwNzAxMTgwOTkxNmJiN2M4OTZkMWY0NjI4ZTg4MTVlNzcwNDY2ZjVjYmRiZmJjZDU4MDE][Slack]]
-if you want a more casual conversation.
+| Directory  | Description                                     |
+|------------+-------------------------------------------------|
+| section1/  | Roswell basics - installation, scripts, builds  |
+| section2/  | Lem editor setup and usage                      |
+| section3/  | Building a postal code lookup application       |
+| section4/  | Extending the postal code application           |
+| section5/  | Web application development                     |
 
-** Contribution
-We welcome PR!
+* Getting Started
 
-** License
-#+begin_example
-  MIT License
-  Copyright (c) Naoya Yamashita - https://conao3.com
-  https://github.com/conao3/book-survival-common-lisp/blob/master/LICENSE
-#+end_example
+Install Roswell and SBCL:
 
-** Author
-- Naoya Yamashita ([[https://github.com/conao3][conao3]])
+#+begin_src shell
+pacman -S roswell-git   # or your package manager equivalent
+ros install sbcl-bin
+#+end_src
+
+Add Roswell binaries to your PATH:
+
+#+begin_src shell
+export PATH=$HOME/.roswell/bin:$PATH
+#+end_src
+
+Navigate to any section directory and follow the README for that chapter.
+
+* Example: Running a Roswell Script
+
+#+begin_src shell
+cd section1
+ros fact.ros 10
+# => Factorial 10 = 3628800
+#+end_src
+
+* Contributing
+
+Contributions are welcome. Feel free to open issues for questions or submit pull requests for improvements.
+
+* License
+
+MIT License - Copyright (c) Naoya Yamashita
+
+See [[https://github.com/conao3/book-survival-common-lisp/blob/master/LICENSE][LICENSE]] for details.
+
+* Author
+
+Naoya Yamashita ([[https://github.com/conao3][conao3]])
